@@ -1,6 +1,6 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap.set
+
+vim.g.mapleader = " "
 
 -- Utils
 -- use jk to quick exit insert/visual mode
