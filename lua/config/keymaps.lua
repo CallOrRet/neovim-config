@@ -12,13 +12,6 @@ keymap("i", "<M-h>", "<esc>ha")
 keymap("i", "<M-l>", "<esc>la")
 keymap("i", "<M-j>", "<esc>ja")
 keymap("i", "<M-k>", "<esc>ka")
--- delete single character without copying into register
-keymap("n", "x", '"_x')
--- better pasting
-keymap("v", "p", '"_dP', { desc = "Better paste" })
--- better indenting
-keymap("v", "<", "<gv")
-keymap("v", ">", ">gv")
 -- move line within current mode
 keymap("n", "<M-d>", ":m .+1<cr>==", { desc = "Move line down" })
 keymap("n", "<M-u>", ":m .-2<cr>==", { desc = "Move line up" })
@@ -26,6 +19,13 @@ keymap("i", "<M-d>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down" })
 keymap("i", "<M-u>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up" })
 keymap("v", "<M-d>", ":m '>+1<cr>gv=gv", { desc = "Move line down" })
 keymap("v", "<M-u>", ":m '<-2<cr>gv=gv", { desc = "Move line up" })
+-- delete single character without copying into register
+keymap("n", "x", '"_x')
+-- better pasting
+keymap("v", "p", '"_dP', { desc = "Better paste" })
+-- better indenting
+keymap("v", "<", "<gv")
+keymap("v", ">", ">gv")
 -- clear search highlights
 keymap("n", "<leader>h", ":nohlsearch<cr>", { desc = "clear search highlights" })
 

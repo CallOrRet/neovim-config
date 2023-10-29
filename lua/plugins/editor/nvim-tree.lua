@@ -19,12 +19,12 @@ return {
                 icons = {
                     glyphs = {
                         git = {
-                            unstaged = "󰝦", -- 
-                            staged = "󰐙", -- 
-                            unmerged = "",
-                            renamed = "󰳠", -- 
-                            deleted = "󰍷", -- 
-                            untracked = "󱨧", -- 
+                            unstaged = "󰰐", -- 
+                            staged = "󰯬", -- 
+                            unmerged = "󰰨",
+                            renamed = "󰰟", -- 
+                            deleted = "󰯵", -- 
+                            untracked = "󰰓", -- 
                             ignored = "◌",
                         },
                     },
