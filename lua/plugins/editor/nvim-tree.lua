@@ -1,14 +1,13 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    keys = {
-        { "<leader>ff", "<cmd>NvimTreeFocus<CR>", desc = "Focus file explorer" },
-        { "<leader>ft", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
-        { "<leader>fc", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse file explorer" },
-        { "<leader>fr", "<cmd>NvimTreeRefresh<CR>", desc = "Refresh file explorer" },
-    },
     event = "User DirOpened",
+    cmd = {
+        "NvimTreeFocus",
+        "NvimTreeToggle",
+        "NvimTreeCollapse",
+        "NvimTreeRefresh",
+    },
     config = function()
-
         require("nvim-tree").setup({
             view = {
                 relativenumber = true,

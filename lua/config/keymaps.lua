@@ -64,3 +64,20 @@ keymap("n", "[t", ":tabprevious<cr>", { desc = "Previous Tab" })
 -- Terminal
 keymap({ "i", "v", "n", "t"}, "<C-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
 keymap("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter normal mode" })
+
+-- NvimTree
+keymap("n", "<leader>ff", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
+keymap("n", "<leader>ft", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+keymap("n", "<leader>fc", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
+keymap("n", "<leader>fr", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+
+-- Bufferline
+keymap("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+keymap("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+keymap("n", "<leader>bc", "<Cmd>BufferLinePick<CR>", { desc = "Pick buffer" })
+keymap("n", "<leader>bC", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick close buffer" })
+keymap("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin buffer" })
+keymap("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Close non-pinned buffers" })
+keymap("n", "<leader>bd", "<Cmd>Bdelete<CR>", { desc = "Close current buffer" })
+keymap("n", "<leader>bD", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Close other buffers" })
+keymap("n", "<leader>bf", "<Cmd>Bdelete!<CR>", { desc = "Force close current buffer" })
