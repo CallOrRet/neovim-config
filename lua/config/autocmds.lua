@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
     callback = function(args)
         local bufname = vim.api.nvim_buf_get_name(args.buf)
         local stat = vim.loop.fs_stat(bufname)
-        if stat and stat.type == "directory" or false then
+        if stat and stat.type == "directory" then
             vim.api.nvim_del_augroup_by_name("_dir_opened")
             vim.api.nvim_exec_autocmds("User", { pattern = "DirOpened" })
             -- 多释放一次同样的event 有些刚被 `DirOpened` 触发的插件需要
@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
     callback = function(args)
         local bufname = vim.api.nvim_buf_get_name(args.buf)
         local stat = vim.loop.fs_stat(bufname)
-        if stat and stat.type == "directory" or false then
+        if stat and stat.type == "directory" then
             return
         end
         local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
