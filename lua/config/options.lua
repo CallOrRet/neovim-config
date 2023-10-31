@@ -20,7 +20,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.autoread = true
 vim.bo.autoread = true
 vim.wo.wrap = true
@@ -40,7 +40,7 @@ vim.opt.background = "dark"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = "space:·,tab:> "
 vim.opt.wildmenu = true
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })

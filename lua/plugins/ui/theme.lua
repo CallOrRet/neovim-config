@@ -14,6 +14,7 @@ return {
         lazy = true,
         config = function()
             require('onedark').setup({ style = "deep" })
+            -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
         end
     }
 }

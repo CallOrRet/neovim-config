@@ -79,14 +79,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
         if stat and stat.type == "directory" then
             vim.api.nvim_del_augroup_by_name("_dir_opened")
             vim.api.nvim_exec_autocmds("User", { pattern = "DirOpened" })
-            -- 多释放一次同样的event 有些刚被 `DirOpened` 触发的插件需要
             vim.api.nvim_exec_autocmds(args.event, { buffer = args.buf, data = args.data })
         end
     end,
 })
 
 vim.api.nvim_create_augroup("_file_opened", {})
-vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePre" }, {
     group = "_file_opened",
     nested = true,
     callback = function(args)
@@ -98,9 +97,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
         local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
         if not (vim.fn.expand "%" == "" or buftype == "nofile") then
             vim.api.nvim_del_augroup_by_name("_file_opened")
+            vim.schedule(function()
+                vim.api.nvim_exec_autocmds("User", { pattern = "FileOpenedLazy" })
+            end)
             vim.api.nvim_exec_autocmds("User", { pattern = "FileOpened" })
-            -- 多释放一次同样的event 有些刚被 `FileOpened` 触发的插件需要
-            vim.api.nvim_exec_autocmds(args.event, { buffer = args.buf, data = args.data })
         end
     end,
 })
