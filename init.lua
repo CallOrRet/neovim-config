@@ -1,4 +1,4 @@
-require("config.options")
-require("config.keymaps")
-require("config.autocmds")
-require("config.lazynvim")
+require("core.options")
+require("core.keymaps")
+require("core.autocmds")
+require("core.lazynvim")

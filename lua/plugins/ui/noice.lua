@@ -2,15 +2,14 @@ return {
     "folke/noice.nvim",
     dependencies = {
         "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
     },
     event = "VeryLazy",
     config = function()
         require("noice").setup({
             cmdline = {
                 format = {
-                    search_down = { icon = " " }, 
-                    search_up = { icon = " " }
+                    search_down = { icon = " 󰁅" }, 
+                    search_up = { icon = " 󰁝" }
                 }
             },
             lsp = {
@@ -28,6 +27,6 @@ return {
                 lsp_doc_border = false, -- add a border to hover docs and signature help
             },
         })
-        require("telescope").load_extension("notify")
+        require("telescope").load_extension("noice")
     end
 }

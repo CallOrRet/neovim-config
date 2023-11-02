@@ -26,16 +26,37 @@ return {
                         "mason",
                         "noice",
                         "notify"
-                    } 
+                    },
+                    winbar = {
+                        "lazy",
+                        "dashboard",
+                        "TelescopePrompt",
+                        "mason",
+                        "noice",
+                        "notify",
+                        "NvimTree",
+                        "toggleterm"
+                    }
                 },
             },
+            winbar = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = { {"filename", path = 3} },
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {}
+            },
+            inactive_winbar = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = { {"filename", path = 3} },
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {}
+            },
             sections = {
-                lualine_c = {
-                    {
-                        "filename",
-                        path = 3,
-                    },
-                },
+                lualine_c = {},
                 lualine_x = {
                     {
                         require("lazy.status").updates,
@@ -53,6 +74,14 @@ return {
                     { "encoding" },
                     { "filetype" },
                 },
+            },
+            inactive_sections = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {}
             },
             extensions = { "nvim-tree", "toggleterm" },
         })
