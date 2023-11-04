@@ -67,7 +67,7 @@ keymap({ "i", "v", "n", "t"}, "<C-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle T
 keymap("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter normal mode" })
 
 -- NvimTree
-keymap("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
+keymap("n", "<leader>ee", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
 keymap("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 keymap("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
 keymap("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })

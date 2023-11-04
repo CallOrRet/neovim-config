@@ -48,3 +48,4 @@ vim.opt.pumheight = 10
 vim.opt.showmode = false
 vim.opt.scrolloff = 8 
 vim.opt.sidescrolloff = 8 
+vim.opt.shell="bash"
