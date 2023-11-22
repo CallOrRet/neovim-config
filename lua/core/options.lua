@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.g.encoding = "UTF-8"
 vim.opt.fileencoding = "utf-8"
 vim.wo.number = true
@@ -37,8 +39,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.background = "dark"
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 vim.opt.list = false
 vim.opt.listchars = "space:·,tab:> "
