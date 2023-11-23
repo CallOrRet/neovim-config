@@ -41,7 +41,8 @@ local kind_icons = {
 }
 
 local menu_names  = {
-    luasnip = "[snippet]",
+    nvim_lsp = "[lsp]",
+    luasnip = "[snippet]"
 }
 
 return {

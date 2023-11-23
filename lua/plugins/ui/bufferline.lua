@@ -1,7 +1,6 @@
 return {
     "akinsho/bufferline.nvim",
     dependencies = {  "moll/vim-bbye" },
-    -- event = "User FileOpened",
     event = "VeryLazy",
     cmd = {
         "BufferLineCyclePrev",
@@ -27,7 +26,7 @@ return {
                         highlight = "Directory",
                         text_align = "left",
                         padding = 1,
-                    } 
+                    }
                 }
             }
         })

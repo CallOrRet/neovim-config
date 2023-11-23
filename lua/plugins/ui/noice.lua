@@ -8,7 +8,7 @@ return {
         require("noice").setup({
             cmdline = {
                 format = {
-                    search_down = { icon = " 󰁅" }, 
+                    search_down = { icon = " 󰁅" },
                     search_up = { icon = " 󰁝" }
                 }
             },

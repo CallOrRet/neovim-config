@@ -1,17 +1,11 @@
 return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    -- lazy = true,
-    event = "User FileOpened",
+    event = "VeryLazy",
     config = function()
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-        -- require("mason").setup()
-        -- import lspconfig plugin
-        local lspconfig = require("lspconfig")
         local keymap = vim.keymap -- for conciseness
         local opts = { noremap = true, silent = true }
-        local on_attach = function(client, bufnr)
+        local on_attach = function(_, bufnr)
             opts.buffer = bufnr
 
             -- set keybinds
@@ -54,6 +48,11 @@ return {
             opts.desc = "Restart LSP"
             keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
         end
+
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+        local lspconfig = require("lspconfig")
         local mason_lspconfig = require("mason-lspconfig")
         mason_lspconfig.setup()
         mason_lspconfig.setup_handlers({
