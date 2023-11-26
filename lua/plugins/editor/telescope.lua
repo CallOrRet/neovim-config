@@ -1,6 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
-    dependencies = { 
+    dependencies = {
         'nvim-lua/plenary.nvim',
         {
             "nvim-telescope/telescope-fzf-native.nvim",
@@ -11,7 +11,9 @@ return {
         {
             "ahmedkhalf/project.nvim",
             config = function()
-                require("project_nvim").setup()
+                require("project_nvim").setup({
+                    detection_methods = { "pattern" },
+                })
             end
         }
     },
