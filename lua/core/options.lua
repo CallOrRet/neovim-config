@@ -46,6 +46,6 @@ vim.opt.wildmenu = true
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 vim.opt.pumheight = 10
 vim.opt.showmode = false
-vim.opt.scrolloff = 8 
-vim.opt.sidescrolloff = 8 
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.opt.shell="bash"

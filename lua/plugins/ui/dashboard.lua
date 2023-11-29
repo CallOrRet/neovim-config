@@ -1,7 +1,7 @@
 return {
     "nvimdev/dashboard-nvim",
     event = "User ShowDashboard",
-    cmd = "Dashboard",
+    cmd = { "Dashboard" },
     config = function()
         local logo = {
             "",

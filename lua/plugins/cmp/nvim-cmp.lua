@@ -40,9 +40,10 @@ local kind_icons = {
     Variable      = "󰀫 ",
 }
 
-local menu_names  = {
+local menu_names = {
     nvim_lsp = "[lsp]",
-    luasnip = "[snippet]"
+    luasnip = "[snippet]",
+    nvim_lua = "[nvim-lua-api]",
 }
 
 return {
@@ -74,6 +75,7 @@ return {
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = 'nvim_lua' },
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
@@ -113,7 +115,7 @@ return {
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, item)
-                    item.menu = menu_names[entry.source.name] or '[' .. entry.source.name .. ']'
+                    item.menu = menu_names[entry.source.name] or ('[' .. entry.source.name .. ']')
                     item.kind = kind_icons[item.kind] or item.kind
                     return item
                 end,
