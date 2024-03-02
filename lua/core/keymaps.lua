@@ -7,10 +7,10 @@ vim.g.maplocalleader = ' '
 -- use jk to quick exit insert/visual mode
 keymap({ "i", "v" }, "jk", "<esc>")
 -- better moving
-keymap("i", "<C-h>", "<esc>ha")
-keymap("i", "<C-l>", "<esc>la")
-keymap("i", "<C-j>", "<esc>ja")
-keymap("i", "<C-k>", "<esc>ka")
+keymap("i", "<C-h>", "<left>")
+keymap("i", "<C-l>", "<right>")
+keymap("i", "<C-j>", "<down>")
+keymap("i", "<C-k>", "<up>")
 -- move line within current mode
 keymap("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
 keymap("n", "<M-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
@@ -30,7 +30,7 @@ keymap("n", "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highligh
 
 -- File
 -- close current file
-keymap("n", "<C-q>", "<Cmd>Bdelete<cr>", { desc = "Close current file" })
+keymap("n", "<C-q>", "<cmd>Bdelete<cr>", { desc = "Close current file" })
 -- save file
 keymap({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- new file

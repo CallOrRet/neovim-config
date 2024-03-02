@@ -1,9 +1,9 @@
 return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+        "hrsh7th/cmp-nvim-lsp",
     },
     event = "VeryLazy",
     config = function()
@@ -68,7 +68,7 @@ return {
             keymap("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
             opts.desc = "Show documentation for what is under cursor"
-            keymap("n", "<C-K>", vim.lsp.buf.signature_help, opts) -- show documentation for what is under cursor
+            keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- show documentation for what is under cursor
 
             opts.desc = "Restart LSP"
             keymap("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary

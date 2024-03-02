@@ -39,20 +39,10 @@ return {
                 },
             },
             winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { {"filename", path = 3} },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
+                lualine_c = { { "filename", path = 3 } },
             },
             inactive_winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { {"filename", path = 3} },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
+                lualine_c = { { "filename", path = 3 } },
             },
             sections = {
                 lualine_c = {},
@@ -74,15 +64,7 @@ return {
                     { "filetype" },
                 },
             },
-            inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {},
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
-            },
-            extensions = { "nvim-tree", "toggleterm" },
+           extensions = { "nvim-tree", "toggleterm" },
         })
     end
 }
