@@ -4,5 +4,5 @@ return {
     cmd = {
         "ToggleTerm",
     },
-    opts = {},
+    opts = {}
 }
