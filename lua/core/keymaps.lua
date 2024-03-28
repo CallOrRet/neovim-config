@@ -63,8 +63,8 @@ keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- Terminal
-keymap({ "i", "v", "n", "t" }, "<C-]>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
-keymap("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter normal mode" })
+keymap({ "i", "v", "n", "t" }, "<C-t>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+keymap("t", "<C-e>", "<C-\\><C-n>", { desc = "Enter normal mode" })
 
 -- NvimTree
 keymap("n", "<leader>ee", "<cmd>NvimTreeFocus<cr>", { desc = "Focus file explorer" })
