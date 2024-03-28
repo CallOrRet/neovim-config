@@ -80,3 +80,9 @@ keymap("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", { desc = "c
 keymap("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "close current buffer" })
 keymap("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", { desc = "close other buffers" })
 keymap("n", "<leader>bf", "<cmd>bdelete!<cr>", { desc = "force close current buffer" })
+
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "find files" })
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "find files by text" })
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "find buffers" })
+keymap("n", "<leader>ft", "<cmd>Telescope help_tags<cr>", { desc = "find help tags" })
