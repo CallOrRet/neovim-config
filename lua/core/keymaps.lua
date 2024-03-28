@@ -3,82 +3,80 @@ local keymap = vim.keymap.set
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Utils
+-- utils
 -- use jk to quick exit insert/visual mode
-keymap({ "i", "v" }, "jk", "<esc>")
+keymap("n", "<c-q>", "<cmd>quitall<cr>", { desc = "quit all" })
+keymap({ "i", "v", "c" }, "jk", "<esc>")
 -- better moving
-keymap("i", "<C-h>", "<left>")
-keymap("i", "<C-l>", "<right>")
-keymap("i", "<C-j>", "<down>")
-keymap("i", "<C-k>", "<up>")
+keymap("i", "<c-h>", "<left>")
+keymap("i", "<c-l>", "<right>")
+keymap("i", "<c-j>", "<down>")
+keymap("i", "<c-k>", "<up>")
 -- move line within current mode
-keymap("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
-keymap("n", "<M-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
-keymap("i", "<M-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down" })
-keymap("i", "<M-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up" })
-keymap("v", "<M-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "Move line down" })
-keymap("v", "<M-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "Move line up" })
+keymap("n", "<m-j>", "<cmd>m .+1<cr>==", { desc = "move line down" })
+keymap("n", "<m-k>", "<cmd>m .-2<cr>==", { desc = "move line up" })
+keymap("i", "<m-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "move line down" })
+keymap("i", "<m-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "move line up" })
+keymap("v", "<m-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "move line down" })
+keymap("v", "<m-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "move line up" })
 -- delete single character without copying into register
 keymap("n", "x", '"_x')
 -- better pasting
-keymap("v", "p", '"_dP', { desc = "Better paste" })
+keymap("v", "p", '"_dp', { desc = "better paste" })
 -- better indenting
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 -- clear search highlights
-keymap("n", "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highlights" })
+keymap({ "n", "i", "v" }, "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highlights" })
 
--- File
+-- file
 -- close current file
-keymap("n", "<C-q>", "<cmd>Bdelete<cr>", { desc = "Close current file" })
+keymap("n", "<c-b>", "<cmd>bdelete<cr>", { desc = "close current file" })
 -- save file
-keymap({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+keymap({ "n", "i", "v" }, "<c-s>", "<cmd>w<cr><esc>", { desc = "save file" })
 -- new file
-keymap("n", "<C-n>", "<cmd>ene!<cr><esc>", { desc = "New file" })
+keymap("n", "<c-n>", "<cmd>ene!<cr><esc>", { desc = "new file" })
 
--- Window
+-- window
 -- jump
-keymap({ "n", "v", "t" }, "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
-keymap({ "n", "v", "t" }, "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
-keymap({ "n", "v", "t" }, "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
-keymap({ "n", "v", "t" }, "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
+keymap({ "n", "t" }, "<c-h>", "<cmd>wincmd h<cr>", { desc = "go to left window" })
+keymap({ "n", "t" }, "<c-j>", "<cmd>wincmd j<cr>", { desc = "go to lower window" })
+keymap({ "n", "t" }, "<c-k>", "<cmd>wincmd k<cr>", { desc = "go to upper window" })
+keymap({ "n", "t" }, "<c-l>", "<cmd>wincmd l<cr>", { desc = "go to right window" })
 -- management
-keymap("n", "<leader>ww", "<C-w>p", { desc = "Other window" })
-keymap("n", "<leader>wd", "<C-w>c", { desc = "Close window" })
-keymap("n", "<leader>wb", "<C-w>s", { desc = "Split window below" })
-keymap("n", "<leader>wr", "<C-w>v", { desc = "Split window right" })
+keymap("n", "<leader>wn", "<c-w>p", { desc = "other window" })
+keymap("n", "<leader>wd", "<c-w>c", { desc = "close window" })
+keymap("n", "<leader>wb", "<c-w>s", { desc = "split window below" })
+keymap("n", "<leader>wr", "<c-w>v", { desc = "split window right" })
 -- resize
-keymap("n", "<leader>wk", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-keymap("n", "<leader>wj", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-keymap("n", "<leader>wl", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
-keymap("n", "<leader>wh", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-keymap("n", "<leader>we", "<C-w>=", { desc = "equal window width" })
+keymap("n", "<leader>wk", "<cmd>resize +2<cr>", { desc = "increase window height" })
+keymap("n", "<leader>wj", "<cmd>resize -2<cr>", { desc = "decrease window height" })
+keymap("n", "<leader>wl", "<cmd>vertical resize +2<cr>", { desc = "increase window width" })
+keymap("n", "<leader>wh", "<cmd>vertical resize -2<cr>", { desc = "decrease window width" })
+keymap("n", "<leader>we", "<c-w>=", { desc = "equal window width" })
 
--- Tab
-keymap("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last Tab" })
-keymap("n", "<leader>tf", "<cmd>tabfirst<cr>", { desc = "First Tab" })
-keymap("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "New Tab" })
-keymap("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+-- tab
+keymap("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "last tab" })
+keymap("n", "<leader>tf", "<cmd>tabfirst<cr>", { desc = "first tab" })
+keymap("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "new tab" })
+keymap("n", "<leader>td", "<cmd>tabclose<cr>", { desc = "close tab" })
+keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "next tab" })
+keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 
--- Terminal
-keymap({ "i", "v", "n", "t" }, "<C-t>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
-keymap("t", "<C-e>", "<C-\\><C-n>", { desc = "Enter normal mode" })
+-- terminal
+keymap({ "i", "v", "n", "t" }, "<c-t>", "<cmd>ToggleTerm<cr>", { desc = "toggle terminal" })
+keymap("t", "<c-e>", "<c-\\><c-n>", { desc = "enter normal mode" })
 
--- NvimTree
-keymap("n", "<leader>ee", "<cmd>NvimTreeFocus<cr>", { desc = "Focus file explorer" })
-keymap("n", "<leader>et", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
-keymap("n", "<leader>ec", "<cmd>NvimTreeCollapse<cr>", { desc = "Collapse file explorer" })
-keymap("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh file explorer" })
+-- nvimtree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "toggle file explorer" })
 
--- Bufferline
-keymap("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-keymap("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-keymap("n", "<leader>bc", "<Cmd>BufferLinePick<cr>", { desc = "Pick buffer" })
-keymap("n", "<leader>bC", "<Cmd>BufferLinePickClose<cr>", { desc = "Pick close buffer" })
-keymap("n", "<leader>bp", "<Cmd>BufferLineTogglePin<cr>", { desc = "Toggle pin buffer" })
-keymap("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<cr>", { desc = "Close non-pinned buffers" })
-keymap("n", "<leader>bd", "<Cmd>Bdelete<cr>", { desc = "Close current buffer" })
-keymap("n", "<leader>bD", "<Cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
-keymap("n", "<leader>bf", "<Cmd>Bdelete!<cr>", { desc = "Force close current buffer" })
+-- BufferLine
+keymap("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev buffer" })
+keymap("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "next buffer" })
+keymap("n", "<leader>bc", "<cmd>BufferLinePick<cr>", { desc = "pick buffer" })
+keymap("n", "<leader>bC", "<cmd>BufferLinePickClose<cr>", { desc = "pick close buffer" })
+keymap("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "toggle pin buffer" })
+keymap("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", { desc = "close non-pinned buffers" })
+keymap("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "close current buffer" })
+keymap("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", { desc = "close other buffers" })
+keymap("n", "<leader>bf", "<cmd>bdelete!<cr>", { desc = "force close current buffer" })

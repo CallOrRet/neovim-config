@@ -30,16 +30,16 @@ return {
             keymap("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
             opts.desc = "Show LSP definitions"
-            keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+            keymap("n", "gd", vim.lsp.buf.definition, opts) -- show lsp definitions
 
             opts.desc = "Show LSP references"
-            keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+            keymap("n", "gr", vim.lsp.buf.references, opts) -- show definition, references
 
             opts.desc = "Show LSP implementations"
-            keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+            keymap("n", "gi", vim.lsp.buf.implementation, opts) -- show lsp implementations
 
             opts.desc = "Show LSP type definitions"
-            keymap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+            keymap("n", "gt", vim.lsp.buf.type_definition, opts) -- show lsp type definitions
 
             opts.desc = "See available code actions"
             keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -53,7 +53,7 @@ return {
             keymap("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
             opts.desc = "Show buffer diagnostics"
-            keymap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+            keymap("n", "<leader>D", vim.diagnostic.show, opts) -- show  diagnostics for file
 
             opts.desc = "Show line diagnostics"
             keymap("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
