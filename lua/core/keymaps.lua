@@ -27,7 +27,7 @@ keymap("v", "p", '"_dp', { desc = "better paste" })
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 -- clear search highlights
-keymap({ "n", "i", "v" }, "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highlights" })
+keymap({ "n", "v" }, "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highlights" })
 
 -- file
 -- close current file

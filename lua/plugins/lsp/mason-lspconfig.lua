@@ -44,8 +44,8 @@ return {
             opts.desc = "See available code actions"
             keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
-            opts.desc = "Formatting"
-            keymap('n', '<leader>f', function()
+            opts.desc = "Formatting code"
+            keymap('n', '<leader>cf', function()
                 vim.lsp.buf.format { async = true }
             end, opts)
 
