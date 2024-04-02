@@ -31,7 +31,7 @@ keymap({ "n", "v" }, "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search
 
 -- file
 -- close current file
-keymap("n", "<c-b>", "<cmd>bdelete<cr>", { desc = "close current file" })
+keymap("n", "<c-b>", "<cmd>Bdelete<cr>", { desc = "close current file" })
 -- save file
 keymap({ "n", "i", "v" }, "<c-s>", "<cmd>w<cr><esc>", { desc = "save file" })
 -- new file
@@ -77,9 +77,9 @@ keymap("n", "<leader>bc", "<cmd>BufferLinePick<cr>", { desc = "pick buffer" })
 keymap("n", "<leader>bC", "<cmd>BufferLinePickClose<cr>", { desc = "pick close buffer" })
 keymap("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "toggle pin buffer" })
 keymap("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", { desc = "close non-pinned buffers" })
-keymap("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "close current buffer" })
+keymap("n", "<leader>bd", "<cmd>Bdelete<cr>", { desc = "close current buffer" })
 keymap("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", { desc = "close other buffers" })
-keymap("n", "<leader>bf", "<cmd>bdelete!<cr>", { desc = "force close current buffer" })
+keymap("n", "<leader>bf", "<cmd>Bdelete!<cr>", { desc = "force close current buffer" })
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "find files" })

@@ -30,16 +30,16 @@ return {
             keymap("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
             opts.desc = "Show LSP definitions"
-            keymap("n", "gd", vim.lsp.buf.definition, opts) -- show lsp definitions
-
-            opts.desc = "Show LSP references"
-            keymap("n", "gr", vim.lsp.buf.references, opts) -- show definition, references
-
-            opts.desc = "Show LSP implementations"
-            keymap("n", "gi", vim.lsp.buf.implementation, opts) -- show lsp implementations
+            keymap("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts) -- show lsp definitions
 
             opts.desc = "Show LSP type definitions"
-            keymap("n", "gt", vim.lsp.buf.type_definition, opts) -- show lsp type definitions
+            keymap("n", "gt", "<cmd>Telescope lsp_type_definitions<cr>", opts) -- show lsp definitions
+
+            opts.desc = "Show LSP references"
+            keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts) -- show definition, references
+
+            opts.desc = "Show LSP implementations"
+            keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts) -- show lsp implementations
 
             opts.desc = "See available code actions"
             keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
