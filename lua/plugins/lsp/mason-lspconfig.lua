@@ -4,6 +4,7 @@ return {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
+        "folke/neodev.nvim",
     },
     event = "VeryLazy",
     config = function()
