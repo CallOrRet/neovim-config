@@ -6,7 +6,14 @@ return {
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        {
+            "rcarriga/nvim-notify",
+            opts = {
+                fps = 1,
+                stages = "no_animation",
+                timeout = 3000,
+            },
+        },
         "nvim-telescope/telescope.nvim",
     },
     event = "VeryLazy",
