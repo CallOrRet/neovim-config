@@ -10,6 +10,7 @@ return {
             "rcarriga/nvim-notify",
             opts = {
                 fps = 1,
+                render = "compact",
                 stages = "no_animation",
                 timeout = 3000,
             },
@@ -26,6 +27,12 @@ return {
                 }
             },
             lsp = {
+                hover = {
+                    enabled = false
+                },
+                signature = {
+                    enabled = false
+                },
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                     ["vim.lsp.util.stylize_markdown"] = true,

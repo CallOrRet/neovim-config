@@ -14,9 +14,14 @@ return {
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-        require("lspconfig.ui.windows").default_options.border = "rounded"
+        require("lspconfig.ui.windows").default_options.border = "single"
 
-        vim.diagnostic.config({ float = { border = 'rounded' } })
+        vim.diagnostic.config({ float = { border = 'single' } })
+
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
+            { border = "single", max_width = 80 })
+        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
+            { border = "single", max_width = 80 })
 
         local on_attach = function(_, bufnr)
             local keymap = vim.keymap.set
