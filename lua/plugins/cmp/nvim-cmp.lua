@@ -1,51 +1,3 @@
-local kind_icons = {
-    Array         = " ",
-    Boolean       = "󰨙 ",
-    Class         = " ",
-    Codeium       = "󰘦 ",
-    Color         = " ",
-    Control       = " ",
-    Collapsed     = " ",
-    Constant      = "󰏿 ",
-    Constructor   = " ",
-    Copilot       = " ",
-    Enum          = " ",
-    EnumMember    = " ",
-    Event         = " ",
-    Field         = " ",
-    File          = " ",
-    Folder        = " ",
-    Function      = "󰊕 ",
-    Interface     = " ",
-    Key           = " ",
-    Keyword       = " ",
-    Method        = "󰊕 ",
-    Module        = " ",
-    Namespace     = "󰦮 ",
-    Null          = " ",
-    Number        = "󰎠 ",
-    Object        = " ",
-    Operator      = " ",
-    Package       = " ",
-    Property      = " ",
-    Reference     = " ",
-    Snippet       = " ",
-    String        = " ",
-    Struct        = "󰆼 ",
-    TabNine       = "󰏚 ",
-    Text          = " ",
-    TypeParameter = " ",
-    Unit          = " ",
-    Value         = " ",
-    Variable      = "󰀫 ",
-}
-
-local menu_names = {
-    nvim_lsp = "[lsp]",
-    luasnip = "[snippet]",
-    nvim_lua = "[nvim-lua-api]",
-}
-
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -55,14 +7,23 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
+        "onsails/lspkind.nvim",
     },
     event = "VeryLazy",
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+        local lspkind = require("lspkind")
+
+        local source_menu = {
+            nvim_lsp = "[lsp]",
+            nvim_lua = "[nvim]",
+            luasnip  = "[snippet]",
+        }
+
         cmp.setup({
             completion = {
-                completeopt = "menu,menuone,noinsert,noselect",
+                completeopt = "menu,menuone,preview,noselect",
             },
             snippet = {
                 expand = function(args)
@@ -87,7 +48,7 @@ return {
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ["<S-CR>"] = cmp.mapping.confirm({
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
@@ -112,15 +73,14 @@ return {
                 end, { 'i', 's', }),
             }),
             formatting = {
-                fields = { "kind", "abbr", "menu" },
-                format = function(entry, item)
-                    item.menu = menu_names[entry.source.name] or ('[' .. entry.source.name .. ']')
-                    item.kind = kind_icons[item.kind] or item.kind
-                    return item
-                end,
+                format = lspkind.cmp_format({
+                    menu = source_menu,
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                }),
             },
             experimental = {
-                ghost_text = false
+                ghost_text = true
             },
         })
 

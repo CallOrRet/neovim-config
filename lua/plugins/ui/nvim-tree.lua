@@ -8,6 +8,9 @@ return {
         "NvimTreeRefresh",
     },
     config = function()
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+
         require("nvim-tree").setup({
             view = {
                 relativenumber = true,
@@ -33,13 +36,13 @@ return {
             -- disable window_picker for
             -- explorer to work well with
             -- window splits
-            -- actions = {
-            --     open_file = {
-            --         window_picker = {
-            --             enable = false,
-            --         },
-            --     },
-            -- },
+            actions = {
+                open_file = {
+                    window_picker = {
+                        enable = false,
+                    },
+                },
+            },
             filters = {
                 dotfiles = true,
                 custom = { ".DS_Store" },

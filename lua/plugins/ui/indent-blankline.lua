@@ -3,8 +3,9 @@ return {
     main = "ibl",
     event = "User FileOpenedLazy",
     opts = {
+        indent = { char = "┊" },
         exclude = {
-            buftypes = { "nofile", "prompt", "terminal"},
+            buftypes = { "nofile", "prompt", "terminal" },
             filetypes = {
                 "help",
                 "dashboard",

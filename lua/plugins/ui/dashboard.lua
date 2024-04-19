@@ -5,6 +5,10 @@ return {
     config = function()
         local logo = {
             "",
+            "",
+            "",
+            "",
+            "",
             "███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
             "████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
             "██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
@@ -12,13 +16,18 @@ return {
             "██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
             "╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
             "",
+            "",
+            "",
+            "",
+            "",
         }
         require("dashboard").setup({
             theme = "doom",
             hide = {
-                -- 让其他对应的插件自己控制 不然布局会有问题
+                -- let other plugins control statusline and tabline
                 statusline = false,
                 tabline = false,
+                winbar = false,
             },
             config = {
                 header = logo,
