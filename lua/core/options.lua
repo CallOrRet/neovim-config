@@ -1,51 +1,67 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.encoding = "UTF-8"
-vim.opt.fileencoding = "utf-8"
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.cursorline = false
-vim.wo.signcolumn = "yes"
-vim.wo.colorcolumn = "100"
-vim.opt.tabstop = 4
-vim.bo.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftround = true
-vim.opt.shiftwidth = 4
-vim.bo.shiftwidth = 4
-vim.opt.expandtab = true
-vim.bo.expandtab = true
-vim.opt.autoindent = true
-vim.bo.autoindent = true
-vim.opt.smartindent = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.cmdheight = 0
-vim.opt.autoread = true
-vim.bo.autoread = true
-vim.wo.wrap = true
-vim.opt.whichwrap = "<,>,[,],h,l"
-vim.opt.hidden = true
-vim.opt.mouse = ""
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
-vim.opt.updatetime = 300
-vim.opt.timeout = true
-vim.opt.timeoutlen = 300
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
-vim.opt.background = "dark"
-vim.opt.termguicolors = true
-vim.opt.list = false
-vim.opt.listchars = "space:·,tab:> "
-vim.opt.wildmenu = true
-vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
-vim.opt.pumheight = 10
-vim.opt.showmode = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.shell="bash"
+
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
+
+-- tabs & indentation
+opt.tabstop = 4       -- 4 spaces for tabs (prettier default)
+opt.shiftwidth = 4    -- 4 spaces for indent width
+opt.expandtab = true  -- expand tab to spaces
+opt.autoindent = true -- copy indent from current line when starting new one
+opt.smartindent = true
+
+opt.wrap = true
+opt.whichwrap = "<,>,[,],h,l"
+
+-- search settings
+opt.ignorecase = true -- ignore case when searching
+opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
+
+-- turn on termguicolors for tokyonight colorscheme to work
+-- (have to use iterm2 or any other true color terminal)
+opt.termguicolors = true
+opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
+
+-- backspace
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- clipboard
+-- opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- split windows
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
+
+-- turn off swapfile
+opt.swapfile = false
+opt.fileencoding = "utf-8"
+
+opt.colorcolumn = "100"
+
+opt.cmdheight = 0
+opt.showmode = false
+
+-- diabsle mosue support
+opt.mouse = ""
+
+opt.updatetime = 300
+opt.timeout = true
+opt.timeoutlen = 300
+
+-- short prompt message
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+-- maximum number of items to show in the popup menu
+opt.pumheight = 10
+
+
+-- minimal number of screen lines to keep above and below
+opt.scrolloff = 8
+-- minimal number of screen columns to keep to the left 
+opt.sidescrolloff = 8
+
+opt.shell = "bash"
