@@ -11,8 +11,6 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        vim.api.nvim_set_hl(0, "NvimTreeGitNewIcon", { fg = "#c6a837" })
-
         require("nvim-tree").setup({
             view = {
                 relativenumber = true,

@@ -28,6 +28,10 @@ return {
             buffer   = "[BUFFER]",
         }
 
+        local winhighlight = {
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+        }
+
         cmp.setup({
             completion = {
                 completeopt = "menu,menuone,preview,noselect",
@@ -38,8 +42,8 @@ return {
                 end
             },
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered(winhighlight),
+                documentation = cmp.config.window.bordered(winhighlight),
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },

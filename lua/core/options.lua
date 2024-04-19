@@ -26,9 +26,13 @@ opt.smartcase = true  -- if you include mixed case in your search, assumes you w
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
+opt.colorcolumn = "110"
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- end of buffer char
+vim.opt.fillchars = { eob = ' ' }
 
 -- clipboard
 -- opt.clipboard:append("unnamedplus") -- use system clipboard as default register
@@ -41,7 +45,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 opt.fileencoding = "utf-8"
 
-opt.colorcolumn = "100"
 
 opt.cmdheight = 0
 opt.showmode = false
@@ -61,7 +64,7 @@ opt.pumheight = 10
 
 -- minimal number of screen lines to keep above and below
 opt.scrolloff = 8
--- minimal number of screen columns to keep to the left 
+-- minimal number of screen columns to keep to the left
 opt.sidescrolloff = 8
 
 opt.shell = "bash"
