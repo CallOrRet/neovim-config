@@ -64,8 +64,19 @@ keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "next tab" })
 keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 
 -- terminal
-keymap({ "i", "v", "n", "t" }, "<c-t>", "<cmd>ToggleTerm<cr>", { desc = "toggle terminal" })
-keymap("t", "<c-e>", "<c-\\><c-n>", { desc = "enter normal mode" })
+keymap({ "n", "t" }, "<leader>sv", "<cmd>ToggleTerm size=60 direction=vertical<cr>",
+    { desc = "toggle terminal vertically" })
+keymap({ "n", "t" }, "<leader>sh", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
+    { desc = "toggle terminal horizontally" })
+keymap({ "n", "t" }, "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",
+    { desc = "toggle terminal float" })
+keymap({ "n", "t" }, "<leader>ss", "<cmd>TermSelect<cr>",
+    { desc = "select terminal" })
+keymap({ "n", "t" }, "<leader>st", "<cmd>ToggleTermToggleAll<cr>",
+    { desc = "toggel all terminal" })
+keymap({ "n", "t" }, "<leader>sn", "<cmd>lua require('toggleterm.terminal').Terminal:new():toggle()<cr>",
+    { desc = "select terminal" })
+keymap("t", "<c-e>", "<c-\\><c-n>", { desc = "terminal enter normal mode" })
 
 -- nvimtree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "toggle file explorer" })
@@ -85,4 +96,5 @@ keymap("n", "<leader>bf", "<cmd>Bdelete!<cr>", { desc = "force close current buf
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "find files" })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "find files by text" })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "find buffers" })
+keymap("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "find notify" })
 keymap("n", "<leader>ft", "<cmd>Telescope help_tags<cr>", { desc = "find help tags" })

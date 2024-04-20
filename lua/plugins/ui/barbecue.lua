@@ -4,18 +4,22 @@ return {
     event = "User FileOpenedLazy",
     dependencies = {
         "SmiteshP/nvim-navic",
+        "onsails/lspkind.nvim",
     },
-    opts = {
-        exclude_filetypes = {
-            'help',
-            "lazy",
-            "dashboard",
-            "toggleterm",
-            "TelescopePrompt",
-            "mason",
-            "noice",
-            "notify",
-            "NvimTree",
-        }
-    }
+    config = function()
+        require("barbecue").setup({
+            kinds = require("lspkind").presets.default,
+            exclude_filetypes = {
+                'help',
+                "lazy",
+                "dashboard",
+                "toggleterm",
+                "TelescopePrompt",
+                "mason",
+                "noice",
+                "notify",
+                "NvimTree",
+            }
+        })
+    end
 }
