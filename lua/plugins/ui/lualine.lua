@@ -27,23 +27,7 @@ return {
                         "notify",
                         "toggleterm"
                     },
-                    winbar = {
-                        "lazy",
-                        "dashboard",
-                        "TelescopePrompt",
-                        "mason",
-                        "noice",
-                        "notify",
-                        "NvimTree",
-                        "toggleterm"
-                    }
                 },
-            },
-            winbar = {
-                lualine_c = { { "filename", path = 3 } },
-            },
-            inactive_winbar = {
-                lualine_c = { { "filename", path = 3 } },
             },
             sections = {
                 lualine_c = {},

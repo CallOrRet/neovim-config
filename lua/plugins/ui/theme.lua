@@ -1,5 +1,10 @@
 return {
     {
+        "nvim-tree/nvim-web-devicons", -- devicons
+        lazy = false,
+        priority = 1001
+    },
+    {
         "lunarvim/onedarker.nvim",
         lazy = true,
         priority = 1000,
