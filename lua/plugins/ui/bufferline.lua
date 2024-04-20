@@ -1,6 +1,6 @@
 return {
     "akinsho/bufferline.nvim",
-    dependencies = {  "moll/vim-bbye" },
+    dependencies = { "moll/vim-bbye" },
     event = "VeryLazy",
     cmd = {
         "BufferLineCyclePrev",
@@ -14,6 +14,7 @@ return {
     config = function()
         require("bufferline").setup({
             options = {
+                separator_style = "slant",
                 close_command = "Bdelete! %d",
                 show_buffer_icons = true,
                 show_buffer_close_icons = false,
@@ -32,4 +33,3 @@ return {
         })
     end
 }
-
