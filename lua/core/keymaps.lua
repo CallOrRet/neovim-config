@@ -30,8 +30,6 @@ keymap("v", ">", ">gv")
 keymap({ "n", "v" }, "<leader>nh", "<cmd>nohlsearch<cr>", { desc = "clear search highlights" })
 
 -- file
--- close current file
-keymap("n", "<c-b>", "<cmd>Bdelete<cr>", { desc = "close current file" })
 -- save file
 keymap({ "n", "i", "v" }, "<c-s>", "<cmd>w<cr><esc>", { desc = "save file" })
 -- new file
@@ -64,17 +62,17 @@ keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "next tab" })
 keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 
 -- terminal
-keymap({ "n", "t" }, "<leader>sv", "<cmd>ToggleTerm size=60 direction=vertical<cr>",
+keymap({ "n", "t" }, "<c-z>v", "<cmd>ToggleTerm size=60 direction=vertical<cr>",
     { desc = "toggle terminal vertically" })
-keymap({ "n", "t" }, "<leader>sh", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
+keymap({ "n", "t" }, "<c-z>h", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
     { desc = "toggle terminal horizontally" })
-keymap({ "n", "t" }, "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",
+keymap({ "n", "t" }, "<c-z>f", "<cmd>ToggleTerm direction=float<cr>",
     { desc = "toggle terminal float" })
-keymap({ "n", "t" }, "<leader>ss", "<cmd>TermSelect<cr>",
+keymap({ "n", "t" }, "<c-z>s", "<cmd>TermSelect<cr>",
     { desc = "select terminal" })
-keymap({ "n", "t" }, "<leader>st", "<cmd>ToggleTermToggleAll<cr>",
+keymap({ "n", "t" }, "<c-z>t", "<cmd>ToggleTermToggleAll<cr>",
     { desc = "toggel all terminal" })
-keymap({ "n", "t" }, "<leader>sn", "<cmd>lua require('toggleterm.terminal').Terminal:new():toggle()<cr>",
+keymap({ "n", "t" }, "<c-z>n", "<cmd>lua require('toggleterm.terminal').Terminal:new():toggle()<cr>",
     { desc = "select terminal" })
 keymap("t", "<c-e>", "<c-\\><c-n>", { desc = "terminal enter normal mode" })
 
