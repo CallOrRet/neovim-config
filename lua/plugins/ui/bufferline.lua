@@ -14,7 +14,10 @@ return {
     config = function()
         require("bufferline").setup({
             options = {
-                separator_style = "slant",
+                separator_style = {},
+                indicator = {
+                    style = "underline"
+                },
                 close_command = "Bdelete! %d",
                 show_buffer_icons = false,
                 show_buffer_close_icons = false,
@@ -26,7 +29,6 @@ return {
                         text = "Explorer",
                         highlight = "Directory",
                         text_align = "left",
-                        padding = 1,
                     }
                 }
             }

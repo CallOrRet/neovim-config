@@ -25,8 +25,10 @@ return {
         config = function()
             vim.g.moonflyWinSeparator = 2
             vim.g.moonflyNormalFloat = true
-            vim.g.moonflyCursorColor = true
+            vim.g.moonflyTransparent = true
             vim.cmd [[colorscheme moonfly]]
+            vim.api.nvim_set_hl(0, "Type", { link = "MoonflyOrange" })
+            vim.api.nvim_set_hl(0, "@type.builtin", { link = "MoonflyGreen" })
         end
     },
 }
