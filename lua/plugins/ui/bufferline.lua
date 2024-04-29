@@ -1,6 +1,7 @@
 return {
     "akinsho/bufferline.nvim",
     dependencies = { "moll/vim-bbye" },
+    version = "4.5.3",
     event = "VeryLazy",
     cmd = {
         "BufferLineCyclePrev",
