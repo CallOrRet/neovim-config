@@ -1,5 +1,8 @@
 # My Neovim Config
 
+![](https://github.com/CallOrRet/neovim-docker/blob/main/img/1.png)
+![](https://github.com/CallOrRet/neovim-docker/blob/main/img/1.png)
+
 ## Clone the repository
 
 ```bash
