@@ -16,7 +16,7 @@ return {
     },
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = {"regex", "markdown"},
+            ensure_installed = { "regex", "markdown" },
             sync_install = false,
             auto_install = true,
             highlight = { enable = true },
@@ -39,6 +39,8 @@ return {
 
                     keymaps = {
                         -- You can use the capture groups defined in textobjects.scm
+                        ["ak"] = { query = "@block.outer", desc = "around block" },
+                        ["ik"] = { query = "@block.inner", desc = "inside block" },
                         ["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
                         ["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
                         ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
@@ -72,11 +74,13 @@ return {
                 swap = {
                     enable = true,
                     swap_next = {
+                        ["<leader>nk"] = "@block.outer",
                         ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
                         ["<leader>n:"] = "@property.outer",  -- swap object property with next
                         ["<leader>nm"] = "@function.outer",  -- swap function with next
                     },
                     swap_previous = {
+                        ["<leader>pk"] = "@block.outer",
                         ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
                         ["<leader>p:"] = "@property.outer",  -- swap object property with prev
                         ["<leader>pm"] = "@function.outer",  -- swap function with previous
@@ -86,6 +90,8 @@ return {
                     enable = true,
                     set_jumps = true, -- whether to set jumps in the jumplist
                     goto_next_start = {
+                        ["]k"] = { query = "@block.outer", desc = "Next block start" },
+                        ["]a"] = { query = "@parameter.inner", desc = "Next argument start" },
                         ["]f"] = { query = "@call.outer", desc = "Next function call start" },
                         ["]m"] = { query = "@function.outer", desc = "Next method/function def start" },
                         ["]c"] = { query = "@class.outer", desc = "Next class start" },
@@ -98,6 +104,8 @@ return {
                         ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                     },
                     goto_next_end = {
+                        ["]K"] = { query = "@block.outer", desc = "Next block end" },
+                        ["]A"] = { query = "@parameter.inner", desc = "Next argument end" },
                         ["]F"] = { query = "@call.outer", desc = "Next function call end" },
                         ["]M"] = { query = "@function.outer", desc = "Next method/function def end" },
                         ["]C"] = { query = "@class.outer", desc = "Next class end" },
@@ -105,6 +113,8 @@ return {
                         ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
                     },
                     goto_previous_start = {
+                        ["[k"] = { query = "@block.outer", desc = "Previous block start" },
+                        ["[a"] = { query = "@parameter.inner", desc = "Previous argument start" },
                         ["[f"] = { query = "@call.outer", desc = "Prev function call start" },
                         ["[m"] = { query = "@function.outer", desc = "Prev method/function def start" },
                         ["[c"] = { query = "@class.outer", desc = "Prev class start" },
@@ -112,6 +122,8 @@ return {
                         ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
                     },
                     goto_previous_end = {
+                        ["[K"] = { query = "@block.outer", desc = "Previous block end" },
+                        ["[A"] = { query = "@parameter.inner", desc = "Previous argument end" },
                         ["[F"] = { query = "@call.outer", desc = "Prev function call end" },
                         ["[M"] = { query = "@function.outer", desc = "Prev method/function def end" },
                         ["[C"] = { query = "@class.outer", desc = "Prev class end" },

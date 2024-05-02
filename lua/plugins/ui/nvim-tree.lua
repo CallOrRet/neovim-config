@@ -1,6 +1,6 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    event = "User DirOpened",
+    event = "User DirOpenedLazy",
     cmd = {
         "NvimTreeFocus",
         "NvimTreeToggle",
