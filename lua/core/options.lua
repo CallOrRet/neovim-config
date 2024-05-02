@@ -26,7 +26,7 @@ opt.smartcase = true  -- if you include mixed case in your search, assumes you w
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
-opt.colorcolumn = "110"
+-- opt.colorcolumn = "110"
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
