@@ -96,3 +96,7 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "find files b
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "find buffers" })
 keymap("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "find notify" })
 keymap("n", "<leader>ft", "<cmd>Telescope help_tags<cr>", { desc = "find help tags" })
+
+-- Gitsigns
+keymap("n", "]g", "<cmd>Gitsigns next_hunk<cr>", { desc = "next git hunk" })
+keymap("n", "[g", "<cmd>Gitsigns prev_hunk<cr>", { desc = "prev git hunk" })
