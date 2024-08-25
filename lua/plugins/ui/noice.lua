@@ -12,7 +12,7 @@ return {
                 fps = 1,
                 render = "compact",
                 stages = "no_animation",
-                timeout = 3000,
+                timeout = 500,
             },
         },
         "nvim-telescope/telescope.nvim",
