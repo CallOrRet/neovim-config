@@ -1,7 +1,7 @@
 return {
     "utilyre/barbecue.nvim",
     name = "barbecue",
-    event = "User FileOpened",
+    event = "User FileOpenedLazy",
     dependencies = {
         "SmiteshP/nvim-navic",
         "onsails/lspkind.nvim",
