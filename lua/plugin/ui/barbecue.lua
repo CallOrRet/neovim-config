@@ -23,5 +23,20 @@ return {
                 "NvimTree",
             }
         })
+
+        local ui = require("barbecue.ui")
+
+        vim.api.nvim_create_autocmd({
+            "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
+            "WinResized",
+            "BufWinEnter",
+            "CursorHold",
+            "InsertLeave",
+        }, {
+            group = vim.api.nvim_create_augroup("barbecue.updater", {}),
+            callback = function()
+                ui.update()
+            end,
+        })
     end
 }
