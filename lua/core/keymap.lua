@@ -62,19 +62,19 @@ keymap("n", "]t", "<cmd>tabnext<cr>", { desc = "next tab" })
 keymap("n", "[t", "<cmd>tabprevious<cr>", { desc = "previous tab" })
 
 -- terminal
-keymap({ "n", "t" }, "<c-j>v", "<cmd>ToggleTerm size=60 direction=vertical<cr>",
+keymap({ "n", "t" }, "<leader><leader>v", "<cmd>ToggleTerm size=60 direction=vertical<cr>",
     { desc = "toggle terminal vertically" })
-keymap({ "n", "t" }, "<c-j>h", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
+keymap({ "n", "t" }, "<leader><leader>h", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
     { desc = "toggle terminal horizontally" })
-keymap({ "n", "t" }, "<c-j>f", "<cmd>ToggleTerm direction=float<cr>",
+keymap({ "n", "t" }, "<leader><leader>f", "<cmd>ToggleTerm direction=float<cr>",
     { desc = "toggle terminal float" })
-keymap({ "n", "t" }, "<c-j>s", "<cmd>TermSelect<cr>",
+keymap({ "n", "t" }, "<leader><leader>s", "<cmd>TermSelect<cr>",
     { desc = "select terminal" })
-keymap({ "n", "t" }, "<c-j>j", "<cmd>ToggleTermToggleAll<cr>",
+keymap({ "n", "t" }, "<leader><leader>t", "<cmd>ToggleTerm size=15 direction=horizontal<cr>",
     { desc = "toggel all terminal" })
-keymap({ "n", "t" }, "<c-j>n", "<cmd>lua require('toggleterm.terminal').Terminal:new():toggle()<cr>",
+keymap({ "n", "t" }, "<leader><leader>n", "<cmd>lua require('toggleterm.terminal').Terminal:new():toggle()<cr>",
     { desc = "select terminal" })
-keymap("t", "<c-j>k", "<c-\\><c-n>", { desc = "terminal enter normal mode" })
+keymap("t", "<leader><leader>j", "<c-\\><c-n>", { desc = "terminal enter normal mode" })
 
 -- nvimtree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "toggle file explorer" })
