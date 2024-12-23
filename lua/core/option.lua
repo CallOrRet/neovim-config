@@ -55,7 +55,7 @@ opt.showmode = false
 -- diabsle mosue support
 opt.mouse = ""
 
-opt.updatetime = 300
+opt.updatetime = 200
 opt.timeout = true
 opt.timeoutlen = 300
 

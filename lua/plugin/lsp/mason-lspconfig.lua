@@ -23,7 +23,11 @@ return {
         vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
             { border = "single", max_width = 80 })
 
-        local on_attach = function(_, bufnr)
+        local on_attach = function(client, bufnr)
+            if client.server_capabilities["documentSymbolProvider"] then
+                require("nvim-navic").attach(client, bufnr)
+            end
+
             local keymap = vim.keymap.set
             local opts = { noremap = true, silent = true }
 
@@ -90,7 +94,7 @@ return {
                                 settings = {
                                     Lua = {
                                         format = {
-                                            enable = false,
+                                            enable = true,
                                         },
                                         diagnostics = {
                                             globals = { "vim", "spec" },

@@ -8,6 +8,8 @@ return {
     },
     config = function()
         require("barbecue").setup({
+            attach_navic = false,
+            create_autocmd = false,
             kinds = require("lspkind").presets.default,
             exclude_filetypes = {
                 'help',
