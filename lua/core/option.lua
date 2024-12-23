@@ -35,8 +35,7 @@ opt.cursorline = true -- highlight the current cursor line
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- end of buffer char
-opt.fillchars = { eob = ' ' }
-
+opt.fillchars:append("eob: ")
 -- clipboard
 -- opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
@@ -60,7 +59,7 @@ opt.timeout = true
 opt.timeoutlen = 300
 
 -- short prompt message
-opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.shortmess:append("WICc")
 -- maximum number of items to show in the popup menu
 opt.pumheight = 10
 
