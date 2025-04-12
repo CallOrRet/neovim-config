@@ -65,8 +65,8 @@ opt.pumheight = 10
 
 
 -- minimal number of screen lines to keep above and below
--- opt.scrolloff = 8
+opt.scrolloff = 5
 -- minimal number of screen columns to keep to the left
--- opt.sidescrolloff = 8
+opt.sidescrolloff = 5
 
 opt.shell = "bash"
